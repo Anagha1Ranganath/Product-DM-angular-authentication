@@ -4,8 +4,8 @@
 <form [formGroup]="user" (ngSubmit)="login()">
   <mat-form-field appearance="outline" class="id">
     <mat-label>Delivery manager login</mat-label>
-    <input matInput placeholder="Enter your email id" type="email"
-      formControlName="email" required />
+    <input matInput placeholder="Enter your email id" type="text"
+      formControlName="managerId" required />
     <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
     <mat-hint></mat-hint>
   </mat-form-field>

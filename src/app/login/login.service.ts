@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class LoginService {
 
-    private loginUrl = 'http://localhost:3000/api/login';  // URL to web api
+    private loginUrl = 'http://localhost:8808/api/deliveryManager';  // URL to web api
 
     constructor(
         private http: HttpClient) {
@@ -17,11 +17,11 @@ export class LoginService {
         return this.http.post<any>(this.loginUrl, user);
     }
 
-    setCookie(cvalue: string, exdays: number) {
+    setCookie(cname: string, cvalue: string, exdays: number) {
         let date = new Date();
         date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
         let expires = `expires=${date.toUTCString()}`;
-        document.cookie = `token=${cvalue};${expires};path=/`;
+        document.cookie = `${cname}=${cvalue};${expires};path=/`;
     }
 
     getCookie(cname: string) {
